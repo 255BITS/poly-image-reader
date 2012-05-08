@@ -41,7 +41,7 @@ After linking to the script tag, add this function:
 You don't need to use a phone or tablet to test how this looks.  Just use the
 following url parameter:  `polyPreview`
 
-`polyPreview` can be
+####polyPreview options####
 
 - tablet[LINK](LINK)
 - phone[LINK](LINK)
