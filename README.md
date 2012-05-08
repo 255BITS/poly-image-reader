@@ -48,8 +48,7 @@ following url parameter:  `polyPreview`
 
 ###Styling###
 
-Poly Reader places everything in CSS classes, so feel free to style to your hearts content.  Here
-are a 
+Poly Reader places everything in CSS classes, so feel free to style to your hearts content.
 
 ####List of CSS classes####
   *span.poly-upload-content.browser - the text string inside the html5 drag and drop area
