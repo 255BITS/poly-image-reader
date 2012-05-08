@@ -42,8 +42,9 @@ You don't need to use a phone or tablet to test how this looks.  Just use the
 following url parameter:  `polyPreview`
 
 `polyPreview` can be
-1. tablet[LINK](LINK)
-2. phone[LINK](LINK)
+
+- tablet[LINK](LINK)
+- phone[LINK](LINK)
 
 ##Styling##
 
