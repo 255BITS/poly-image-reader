@@ -3,11 +3,11 @@ poly-upload
 
 A cross-platform camera/image upload library for browsers, phones and tablets.
 
-_Browsers_
+## Browsers ##
 HTML5 Drag and Drop is supported.
 Webcams are not currently supported, but feel free to add them and issue a pull request.
 
-_Phones or Tablets_
+## Phones or Tablets ##
 Camera or media library upload is supported.
 
 Usage
@@ -15,11 +15,11 @@ Usage
 
 Requires jquery.  Try to use a new version.
 
-_Installing via CDN_
+## Installing via CDN ##
 
 or alternatively download the .coffee file and compile it yourself.
 
-_Using_
+## Using ##
 
 After linking to the script tag, add this function:
 
@@ -36,15 +36,16 @@ After linking to the script tag, add this function:
       doSomethingWith(data);
     });
 
-==Previewing==
+##Previewing##
 
 You don't need to use a phone or tablet to test how this looks.  Just use the
 following url parameter:  `polyPreview`
-polyPreview can either be
-  -tablet[LINK](LINK)
-  -phone[LINK](LINK)
 
-_Styling_
+`polyPreview` can be
+1. tablet[LINK](LINK)
+2. phone[LINK](LINK)
+
+##Styling##
 
 Poly Reader places everything in CSS classes, so feel free to style to your hearts content.  Here
 are a list of CSS classes
