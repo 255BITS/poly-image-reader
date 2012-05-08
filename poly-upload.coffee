@@ -31,16 +31,16 @@ setUpListener = ($div, callback) ->
 #  Creates a variety of different html5 image media upload depending on platform with one function call.
 #  Platform        |      Functionality
 #  ------------------------------------
-#  Browser(HTML5)  |      Drag & Drop using the FileReader APi
+#  Browser(HTML5)  |      Drag & Drop using the FileReader API(webcams to come)
 #  Tablet          |      Camera or media Library
 #  Phone           |      Camera or media Library
 #
 #  Options contains:
 #  content - browser content to display inside of an inner span
-window.imageOrCameraUpload = ($div, options, callback) ->
+window.polyUpload = ($div, options, callback) ->
   options = options || {}
   content = options.content || "Drag and drop an image here"
-  $span = $("<span class='image-or-camera-upload-content'/>")
+  $span = $("<span class='poly-upload-content browser'/>")
   $span.html(content)
   $div.html($span)
   setUpListener($div, callback)

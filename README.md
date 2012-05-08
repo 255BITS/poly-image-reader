@@ -1,4 +1,52 @@
 poly-upload
 ===========
 
-cross-platform camera/image upload functionality for browsers, phones and tablets
+A cross-platform camera/image upload library for browsers, phones and tablets.
+
+_Browsers_
+HTML5 Drag and Drop is supported.
+Webcams are not currently supported, but feel free to add them and issue a pull request.
+
+_Phones or Tablets_
+Camera or media library upload is supported.
+
+Usage
+===========
+
+Requires jquery.  Try to use a new version.
+
+_Installing via CDN_
+
+or alternatively download the .coffee file and compile it yourself.
+
+_Using_
+
+After linking to the script tag, add this function:
+
+    // The part of the document you want to drag and drop to, or turn into a camera
+    // or media upload
+    var $contentArea = $('.image-media-area');
+    var options = {
+      content: "Drag and Drop to upload" // Content to display in the drag and drop area
+    };
+    polyImageReader($contentArea, options, function(file, data) {
+      // file is a data structure containing meta-information about the file
+      // such as 'name'
+      // data is base64 encoded
+      doSomethingWith(data);
+    });
+
+_Previewing_
+
+You don't need to use a phone or tablet to test how this looks.  Just use the
+following url parameter:  `polyPreview`
+polyPreview can either be:
+  *tablet[LINK](LINK)
+  *phone[LINK](LINK)
+
+_Styling_
+
+Poly Reader places everything in CSS classes, so feel free to style to your hearts content.  Here
+are a list of CSS classes
+  *span.poly-upload-content.browser - the text string inside the html5 drag and drop area
+  *TODO
