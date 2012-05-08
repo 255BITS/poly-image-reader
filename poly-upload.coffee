@@ -28,16 +28,16 @@ setUpListener = ($div, callback) ->
       reader.readAsDataURL(file)
 
 
-#  Creates a variety of different html5 image media upload depending on platform with one function call.
+#  Creates a variety of different html5 image media reader depending on platform with one function call.
 #  Platform        |      Functionality
 #  ------------------------------------
-#  Browser(HTML5)  |      Drag & Drop using the FileReader API(webcams to come)
+#  Browser(HTML5)  |      Drag & Drop using the FileReader API(no webcam yet)
 #  Tablet          |      Camera or media Library
 #  Phone           |      Camera or media Library
 #
 #  Options contains:
 #  content - browser content to display inside of an inner span
-window.polyUpload = ($div, options, callback) ->
+window.polyImageReader = ($div, options, callback) ->
   options = options || {}
   content = options.content || "Drag and drop an image here"
   $span = $("<span class='poly-upload-content browser'/>")

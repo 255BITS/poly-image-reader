@@ -43,8 +43,8 @@ following url parameter:  `polyPreview`
 
 ####polyPreview options####
 
-- tablet[LINK](LINK)
-- phone[LINK](LINK)
+- tablet ([example](LINK))
+- phone ([example](LINK))
 
 ###Styling###
 
