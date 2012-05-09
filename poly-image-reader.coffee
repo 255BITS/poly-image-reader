@@ -25,19 +25,41 @@ setUpListener = ($div, callback) ->
       reader.onload = loadFile(file, callback)
       reader.readAsDataURL(file)
 
+determinePlatform = (platform) ->
+  if platform == 'mobile' || (window.location.href.indexOf('polyPreview=mobile') != -1)
+    return 'mobile'
+  if platform == 'browser' || (window.location.href.indexOf('polyPreview=browser') != -1)
+    return 'browser'
+
+  if FileReader?
+    return 'browser'
+  if navigator?.camera
+    return 'mobile'
+  
+
 #  Creates a variety of different html5 image media reader depending on platform with one function call.
 #  Platform        |      Functionality
 #  ------------------------------------
 #  Browser(HTML5)  |      Drag & Drop using the FileReader API(no webcam yet)
-#  Tablet          |      Camera or media Library
-#  Phone           |      Camera or media Library
+#  Mobile          |      Camera or media Library
 #
-#  Options contains:
-#  content - browser content to display inside of an inner span
+#  options = {
+#    browserSelector : css3 selector that shows when platform is 'browser',
+#    mobileSelector : css3 selector that shows when platform is 'mobile',
+#    platform : Force a platform.  Useful for debugging.
+#  }
 window.polyImageReader = ($div, options, callback) ->
   options = options || {}
-  content = options.content || "Drag and drop an image here"
-  $span = $("<span class='poly-upload-content browser'/>")
-  $span.html(content)
-  $div.html($span)
-  setUpListener($div, callback)
+  browserSelector = options.browserSelector || ".browser"
+  mobileSelector = options.mobileSelector || ".mobile"
+  platform = determinePlatform(options.platform)
+
+  $div.find(browserSelector).hide()
+  $div.find(mobileSelector).hide()
+  if platform == 'browser'
+    $div.find(browserSelector).show()
+    setUpListener($div, callback)
+
+  else if platform == 'mobile'
+    $div.find(mobileSelector).show()
+    setUpMobile($div, callback)

@@ -7,7 +7,8 @@
       $(document).ready(function() {
         var $contentArea = $('#image-reader-area');
         var options = {
-          content: "Drag and Drop images here" // Content to display in the drag and drop area
+          browserSelector : ".browser",
+          mobileSelector : ".mobile",
         };
         polyImageReader($contentArea, options, function(file, data) {
           // file is a data structure containing meta-information about the file
@@ -16,6 +17,7 @@
           var $img = $("<img class='thumb'/>");
           $img.attr('src', data);
           $("#image-placement-area").append($img);
+          $("#no-images-message").hide();
         });
       });
     </script>
@@ -48,10 +50,15 @@
     </style>
   </head>
   <body>
-    <h2> Poly image reader example </h2>
+    <h2> Poly image reader from 255 BITS </h2>
+    <p>An easy way to add image reading to your html5 application.  For more information see the <a href='https://github.com/255BITS/poly-image-reader'>Github project</a></p>
     <div id='image-reader-area'>
+      <span class='poly-upload-content browser'>Drag and drop an image here</span>
+      <span class='poly-upload-content mobile'>CAMERA or LIBRARY</span>
     </div>
+    <h3>Images Read</h3>
     <div id='image-placement-area'>
+      <div id='no-images-message'>None yet</div>
     </div>
   </body>
 </html>
