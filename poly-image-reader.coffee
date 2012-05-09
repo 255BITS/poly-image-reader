@@ -16,17 +16,14 @@ setUpListener = ($div, callback) ->
 
     files = evt.originalEvent.dataTransfer.files
 
-    console.log files
     for file in files
       unless file.type.match('image.*')
-        console.log "ignoring file of type #{file.type}"
         continue
 
       reader = new FileReader()
 
       reader.onload = loadFile(file, callback)
       reader.readAsDataURL(file)
-
 
 #  Creates a variety of different html5 image media reader depending on platform with one function call.
 #  Platform        |      Functionality

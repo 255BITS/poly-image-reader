@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./poly-image-reader.js"></script>
+    <script>
+      $(document).ready(function() {
+        var $contentArea = $('#image-reader-area');
+        var options = {
+          content: "Drag and Drop images here" // Content to display in the drag and drop area
+        };
+        polyImageReader($contentArea, options, function(file, data) {
+          // file is a data structure containing meta-information about the file
+          // such as 'name'
+          // data is base64 encoded
+          var $img = $("<img class='thumb'/>");
+          $img.attr('src', data);
+          $("#image-placement-area").append($img);
+        });
+      });
+    </script>
+    <style>
+      #image-reader-area {
+        background-color: #aad;
+        border: 4px dashed black;
+        border-radius: 4px;
+        margin-left: 60px;
+        width: 600px;
+        height: 200px;
+      }
+      .poly-upload-content.browser {
+        font-size: 22pt;
+        position: relative;
+        top: 80px;
+        left: 150px;
+      }
+      body {
+        background-color: #ddd;
+      }
+      img.thumb {
+        max-height: 100px;
+        max-width: 100px;
+        padding: 10px;
+      }
+      #image-placement-area {
+        width: 960px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2> Poly image reader example </h2>
+    <div id='image-reader-area'>
+    </div>
+    <div id='image-placement-area'>
+    </div>
+  </body>
+</html>
