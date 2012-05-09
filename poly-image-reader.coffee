@@ -26,9 +26,10 @@ setUpListener = ($div, callback) ->
       reader.readAsDataURL(file)
 
 determinePlatform = (platform) ->
-  if platform == 'mobile' || (window.location.href.indexOf('polyPreview=mobile') != -1)
+  href = window.location.href
+  if platform == 'mobile' || (href.indexOf('polyPreview=tablet') != -1) || (href.indexOf('polyPreview=phone') != -1)
     return 'mobile'
-  if platform == 'browser' || (window.location.href.indexOf('polyPreview=browser') != -1)
+  if platform == 'browser' || (href.indexOf('polyPreview=browser') != -1)
     return 'browser'
 
   if FileReader?
@@ -46,7 +47,7 @@ determinePlatform = (platform) ->
 #  options = {
 #    browserSelector : css3 selector that shows when platform is 'browser',
 #    mobileSelector : css3 selector that shows when platform is 'mobile',
-#    platform : Force a platform.  Useful for debugging.
+#    platform : Force a platform.  Can be either 'phone' or 'mobile'.  Useful for debugging.
 #  }
 window.polyImageReader = ($div, options, callback) ->
   options = options || {}
